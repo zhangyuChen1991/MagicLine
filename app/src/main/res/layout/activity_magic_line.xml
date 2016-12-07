@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/p1x_length"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="起点x范围"
+                android:inputType="number"
+                android:text="450" />
+
+            <EditText
+                android:id="@+id/p1y_length"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="起点y范围"
+                android:inputType="number"
+                android:text="450" />
+
+            <EditText
+                android:id="@+id/p1_speed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="p1_speed"
+                android:inputType="numberDecimal"
+                android:text="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/p2x_length"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="终点x范围"
+                android:inputType="number"
+                android:text="150" />
+
+            <EditText
+                android:id="@+id/p2y_length"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="终点y范围"
+                android:inputType="number"
+                android:text="150" />
+
+            <EditText
+                android:id="@+id/p2_speed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="p2_speed"
+                android:inputType="numberDecimal"
+                android:text="0.15" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="开始绘制" />
+    </LinearLayout>
+
+    <com.chenzy.magicline.MagicLineView
+        android:id="@+id/magic_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"></com.chenzy.magicline.MagicLineView>
+    <Spinner
+        android:id="@+id/selete_draw_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        ></Spinner>
+</LinearLayout>
