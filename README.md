@@ -2,6 +2,12 @@
 >该项目受[此文](http://mp.weixin.qq.com/s/FieNhelCar1cZjhBS28ymQ)启发。
 通过两个点根据一定规律的运动绘制直线，从而画出神奇的视觉效果。
 
+**重要说明**
+>最初是看[winjay](https://github.com/wingjay)同学的博客知道的这个创意，且他和[android-cjj](https://github.com/android-cjj)在
+[winjay的项目](https://github.com/wingjay/WJMagicCurveView)中已经各自实现了一套，原理都是一样的。这个项目是之前我练手实践是写的，由于
+觉得创意实在很棒,所以现在也把它放到我的github上，希望更多的童鞋能够知道。
+如果你要看wingjay和android-cjj的实现，请点击上面内容中的链接即可。
+
 **效果**
 
 动图示例(如加载慢请稍等)：
