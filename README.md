@@ -3,13 +3,17 @@
 通过两个点根据一定规律的运动绘制直线，从而画出神奇的视觉效果。
 
 **效果**
+
 动图示例(如加载慢请稍等)：
+
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/draw1-1.gif)
 
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/draw5-1.gif)
 
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/draw9-1.gif)
+
 更多绘制效果：
+
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/ml1.png)
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/ml2.png)
 
