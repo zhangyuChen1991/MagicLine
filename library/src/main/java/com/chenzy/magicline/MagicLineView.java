@@ -26,8 +26,11 @@ public class MagicLineView extends View {
     private int viewWidth, viewHeight;
     private Paint paint;
     private ValueAnimator valueAnimator;
+    //记录移动过的所有点的数据
     private List<CorrdinateData> corrDatas;
     private DrawingListener drawingListener;
+    //    private int[] colors = new int[]{Color.RED, Color.WHITE, Color.BLUE};
+    //动画绘制的时间
     private int animDuration = 12 * 1000;
 
     public MagicLineView(Context context, AttributeSet attrs) {
@@ -61,8 +64,6 @@ public class MagicLineView extends View {
         corrDatas = new ArrayList<>();
     }
 
-//    private int[] colors = new int[]{Color.RED, Color.WHITE, Color.BLUE};
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -83,7 +84,7 @@ public class MagicLineView extends View {
         }
     };
 
-    Animator.AnimatorListener animatorListener = new Animator.AnimatorListener() {
+    private Animator.AnimatorListener animatorListener = new Animator.AnimatorListener() {
         @Override
         public void onAnimationStart(Animator animation) {
             if (null != drawingListener)
@@ -120,7 +121,6 @@ public class MagicLineView extends View {
      * 计算坐标值
      */
     private void calculate() {
-
         angleP1 = angleP1 + speedP1;
         angleP2 = angleP2 + speedP2;
 
@@ -136,7 +136,6 @@ public class MagicLineView extends View {
 
     private class CorrdinateData {
         float p1X, p1Y, p2X, p2Y;
-
         CorrdinateData(float p1X, float p1Y, float p2X, float p2Y) {
             this.p1X = p1X;
             this.p1Y = p1Y;
@@ -146,7 +145,7 @@ public class MagicLineView extends View {
     }
 
     /**
-     * 设置参数 * @param p1X
+     * 设置参数
      */
     public void setParam(float p1XLength, float p1YLength, float p2XLength, float p2YLength, float speedP1, float speedP2) {
         this.p1XLength = p1XLength;
