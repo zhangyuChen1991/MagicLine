@@ -36,6 +36,7 @@
 ![](https://github.com/zhangyuChen1991/some_sources/blob/master/magicline/ml10.png)
 
 是不是很神奇?
+(PS：大家可以自行添加色彩渲染组合出更绚丽的效果，自行发挥哦！)
 
 **关于原理**
 >这是一个极其简洁却又极富创意的规则。图形是由两个做圆周运动的点相连而成的，区别仅仅是圆的半径大小以及运行速度。
