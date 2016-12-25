@@ -1,6 +1,7 @@
 package com.chenzy.magicline;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -53,13 +54,15 @@ public class MagicLineView extends View {
         valueAnimator = ValueAnimator.ofFloat(0f, 1f);
         valueAnimator.setDuration(animDuration);
         valueAnimator.addUpdateListener(animatorUpdateListener);
-        valueAnimator.addListener(animatorListener);
+        valueAnimator.addListener(animatorListenerAdapter);
 
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeWidth(2);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.WHITE);
+//            Shader shader = new LinearGradient(cd.p1X, cd.p1Y, cd.p2X, cd.p2Y, colors, null, Shader.TileMode.MIRROR);
+//            paint.setShader(shader);
 
         corrDatas = new ArrayList<>();
     }
@@ -70,8 +73,6 @@ public class MagicLineView extends View {
 
         for (int i = 0; i < corrDatas.size(); i++) {
             CorrdinateData cd = corrDatas.get(i);
-//            Shader shader = new LinearGradient(cd.p1X, cd.p1Y, cd.p2X, cd.p2Y, colors, null, Shader.TileMode.MIRROR);
-//            paint.setShader(shader);
             canvas.drawLine(cd.p1X, cd.p1Y, cd.p2X, cd.p2Y, paint);
         }
     }
@@ -84,28 +85,20 @@ public class MagicLineView extends View {
         }
     };
 
-    private Animator.AnimatorListener animatorListener = new Animator.AnimatorListener() {
+    private AnimatorListenerAdapter animatorListenerAdapter = new AnimatorListenerAdapter() {
         @Override
         public void onAnimationStart(Animator animation) {
             if (null != drawingListener)
                 drawingListener.drawStart();
             corrDatas.clear();
+            super.onAnimationStart(animation);
         }
 
         @Override
         public void onAnimationEnd(Animator animation) {
             if (null != drawingListener)
                 drawingListener.drawOver();
-        }
-
-        @Override
-        public void onAnimationCancel(Animator animation) {
-
-        }
-
-        @Override
-        public void onAnimationRepeat(Animator animation) {
-
+            super.onAnimationEnd(animation);
         }
     };
 
@@ -136,6 +129,7 @@ public class MagicLineView extends View {
 
     private class CorrdinateData {
         float p1X, p1Y, p2X, p2Y;
+
         CorrdinateData(float p1X, float p1Y, float p2X, float p2Y) {
             this.p1X = p1X;
             this.p1Y = p1Y;
