@@ -150,13 +150,14 @@ public class MagicLineView extends View {
         this.speedP2 = speedP2;
     }
 
+
     @Override
-    public void onWindowFocusChanged(boolean hasWindowFocus) {
-        super.onWindowFocusChanged(hasWindowFocus);
-        if (hasWindowFocus) {
-            viewWidth = getWidth();
-            viewHeight = getHeight();
-        }
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        viewWidth = getMeasuredWidth();
+        viewHeight = getMeasuredHeight();
+        p1XLength = p2YLength = viewWidth * 0.8f;
+        p2XLength = p1YLength = viewWidth * 0.04f;
     }
 
     public void setDrawingListener(DrawingListener drawingListener) {
